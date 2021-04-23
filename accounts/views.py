@@ -1,13 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
 
-def home(response):
-    return render(response, 'accounts/home.html')
+def home(request):
+    return render(request, 'accounts/home.html')
 
 
-def products(response):
-    return render(response, 'accounts/products.html')
+def products(request):
+    return render(request, 'accounts/products.html')
 
 
-def customer(response):
-    return render(response, 'accounts/customer.html')
+def customer(request):
+    return render(request, 'accounts/customer.html')
