@@ -1,0 +1,59 @@
+{%  extends 'accounts/main.html' %}
+
+{% block content %}
+
+{%  include 'accounts/status.html' %}
+
+
+<br>
+<br>
+<div class="row">
+	<div class="col-md-5">
+	<div class="card-header">
+      <h4 align="center">Klijnet</h4>
+  </div>
+		<hr>
+		<div class="card card-body">
+			<a class="btn btn-primary  btn-sm btn-warning" href="">Stwórz członka</a>
+			<hr>
+            <table class="table table-sm table-dark">
+  <thead>
+    <tr>
+
+      <th></th>
+      <th scope="col">ID Klijent</th>
+      <th scope="col">Zamówienie</th>
+
+
+    </tr>
+
+					</table>
+		</div>
+	</div>
+
+	<div class="col-md-7">
+	<div class="card-header">
+      <h4 align="center">Ostanie 10 zamówień</h4>
+  </div>
+		<hr>
+		<div class="card card-body">
+            <a class="btn btn-primary  btn-sm btn-warning" href="">stórz zamówienie</a>
+<hr>
+            <table class="table-info">
+				<tr>
+					 <th scope="col">Produkt </th>
+      <th scope="col">Kategodia</th>
+      <th scope="col">Data</th>
+      <th scope="col">Cena</th>
+      <th scope="col">CZy zapłacone</th>
+      <th scope="col">Uakalizuj</th>
+				</tr>
+
+			</table>
+		</div>
+        <br>
+	</div>
+
+</div>
+
+{% endblock %}
