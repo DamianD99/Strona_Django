@@ -15,9 +15,28 @@
   <thead>
     <tr>
 
-      <th scope="col">Produkt </th>
+      <th scope="col">Produkt nazwa </th>
       <th scope="col">Kategodia</th>
-      <th scope="col">Cena</th>
+      <th scope="col">Opis</th>
+        <th scope="col">Cena</th>
+      <th scope="col">Data dodania</th>
+      <th scope="col">przynaleśnosc</th>
+        </thead>
+
+
+
+
+
+        {% for i in products %}
+            <tr>
+            <td>{{ i.name }}</td>
+            <td>{{ i.kategoria }}</td>
+            <td>{{ i.content }}</td>
+            <td>{{ i.cena }}</td>
+            <td>{{ i.data }}</td>
+            <td>{{ i.tags }}</td>
+            </tr>
+        {% endfor %}
 
     </tr>
 

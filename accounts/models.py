@@ -1,6 +1,6 @@
 from django.db import models
 
-class Klijent(models.Model):
+class Customer(models.Model):
     imie = models.CharField(max_length=200, null=True)
     nazwisko = models.CharField(max_length=200, null=True)
     content = models.TextField(blank=True, help_text='Opis klijęta')
@@ -35,13 +35,14 @@ class Produkty(models.Model):
 
 class Order(models.Model):
     STATUS = (
-        ('Pending', 'Pending'),
-        ('Out for delivery', 'Out for delivery'),
-        ('Delivered', 'Delivered'),
+        ('Pakowane', 'Pakowane'),
+        ('W drrodze do odbioercy', 'W drrodze do odbioercy'),
+        ('Dostarczone', 'Dostarczone'),
     )
 
-    customer = models.ForeignKey(Klijent, null=True, on_delete=models.SET_NULL)
+    customer = models.ForeignKey(Customer, null=True, on_delete=models.SET_NULL)
     product = models.ForeignKey(Produkty, null=True, on_delete=models.SET_NULL)
+    cena = models.FloatField(null=True)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
     status = models.CharField(max_length=200, null=True, choices=STATUS)
 # Create your models here.

@@ -21,11 +21,25 @@
     <tr>
 
       <th></th>
-      <th scope="col">ID Klijent</th>
-      <th scope="col">Zamówienie</th>
+
+      <th scope="col">Imię Klijenta</th>
+      <th scope="col">nazwisko</th>
+      <th scope="col">Opis</th>
+      <th scope="col">emial</th>
+  </thead>
 
 
-    </tr>
+
+        {% for customer in customers %}
+            <tr>
+        <td>{{ customer.imie}}</td>
+        <td>{{ customer.nazwisko}}</td>
+        <td>{{ customer.content}}</td>
+        <td>{{ customer.email}}</td>
+               </tr>
+        {% endfor %}
+
+            </tr>
 
 					</table>
 		</div>
@@ -41,14 +55,23 @@
 <hr>
             <table class="table-info">
 				<tr>
-					 <th scope="col">Produkt </th>
-      <th scope="col">Kategodia</th>
+                    <th scope="col">Produkt </th>
       <th scope="col">Data</th>
       <th scope="col">Cena</th>
       <th scope="col">CZy zapłacone</th>
       <th scope="col">Uakalizuj</th>
-				</tr>
+                </tr>
 
+
+        {% for order in orders %}
+             <tr>
+            <td>{{ order.product }}</td>
+            <td>{{ order.date_created }}</td>
+            <td>{{ order.cena }}</td>
+            <td>{{ order.status }}</td>
+            <td>{{ i.tags }}</td>
+            </tr>
+                {% endfor %}
 			</table>
 		</div>
         <br>
@@ -56,4 +79,4 @@
 
 </div>
 
-{% endblock %}
+{% endblock content %}
