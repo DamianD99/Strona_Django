@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import *
 
-
 def home(request):
     orders = Order.objects.all()
     customers = Customer.objects.all()
@@ -10,12 +9,12 @@ def home(request):
     total_customers = customers.count()
 
     total_orders = orders.count()
-    delivered = orders.filter(status='Delivered').count()
-    pending = orders.filter(status='Pending').count()
+    dostarczone = orders.filter(status='Dostarczone').count()
+    pakowane = orders.filter(status='Pakowane').count()
 
     context = {'orders': orders, 'customers': customers,
-               'total_orders': total_orders, 'delivered': delivered,
-               'pending': pending}
+               'total_orders': total_orders, 'dostarczone': dostarczone,
+               'pakowane': pakowane}
 
     return render(request, 'accounts/dash.html',context)
 
