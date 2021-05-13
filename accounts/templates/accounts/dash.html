@@ -14,34 +14,30 @@
   </div>
 		<hr>
 		<div class="card card-body">
-			<a class="btn btn-primary  btn-sm btn-warning" href="">Stwórz członka</a>
+			<button type="button" class="btn btn-primary btn-lg btn-block">Stwórz członka</button>
 			<hr>
-            <table class="table table-sm table-dark">
-  <thead>
+            <table class="table table-sm table-secondary">
+
     <tr>
-
       <th></th>
-
       <th scope="col">Imię Klijenta</th>
       <th scope="col">nazwisko</th>
       <th scope="col">Opis</th>
       <th scope="col">emial</th>
-  </thead>
 
-
-
+    </tr>
+<table class="table table-sm table-danger">
         {% for customer in customers %}
-            <tr>
-        <td>{{ customer.imie}}</td>
-        <td>{{ customer.nazwisko}}</td>
-        <td>{{ customer.content}}</td>
-        <td>{{ customer.email}}</td>
+            <tr class="table-danger">
+        <td class="table-danger">{{ customer.imie}}</td>
+        <td class="table-danger">{{ customer.nazwisko}}</td>
+        <td class="table-danger">{{ customer.content}}</td>
+        <td class="table-danger">{{ customer.email}}</td>
                </tr>
+            </table>
         {% endfor %}
 
-            </tr>
-
-					</table>
+            </table>
 		</div>
 	</div>
 
@@ -51,10 +47,12 @@
   </div>
 		<hr>
 		<div class="card card-body">
-            <a class="btn btn-primary  btn-sm btn-warning" href="">stórz zamówienie</a>
+           <button type="button" class="btn btn-primary btn-lg btn-block">Stwórz zamówienie</button>
 <hr>
-            <table class="table-info">
+             <table class="table table-sm table-secondary">
 				<tr>
+
+
                     <th scope="col">Produkt </th>
       <th scope="col">Data</th>
       <th scope="col">Cena</th>
@@ -63,18 +61,20 @@
                 </tr>
 
 
+ <table class="table table-sm table-danger">
         {% for order in orders %}
-             <tr>
-            <td>{{ order.product }}</td>
-            <td>{{ order.date_created }}</td>
-            <td>{{ order.cena }}</td>
-            <td>{{ order.status }}</td>
-            <td>{{ i.tags }}</td>
+             <tr class="table-danger">
+            <td class="table-danger">{{ order.product }}</td>
+            <td class="table-danger">{{ order.date_created }}</td>
+            <td class="table-danger">{{ order.cena }}</td>
+            <td class="table-danger">{{ order.status }}</td>
+            <td class="table-danger">{{ i.tags }}</td>
             </tr>
+            </table>
                 {% endfor %}
 			</table>
 		</div>
-        <br>
+
 	</div>
 
 </div>

@@ -1,0 +1,29 @@
+{% extends 'accounts/main.html' %}
+{% block content %}
+    {% load crispy_forms_tags %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Logowanie</legend>
+                       {{ form|crispy }}
+            </fieldset>
+
+            <form class="was-validated">
+  <div class="custom-control custom-checkbox mb-3">
+    <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
+    <label class="custom-control-label" for="customControlValidation1">Akceptujesz regulaim firmy Damno z.o.o</label>
+    <div class="invalid-feedback">Example invalid feedback text</div>
+  </div>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Loguj</button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Masz juz konto  <a class="ml-2" href={% url 'login' %}">Zaloguj sie </a>
+            </small>
+        </div>
+    </div>
+
+ {% endblock content %}

@@ -1,0 +1,26 @@
+{%  extends 'accounts/main.html' %}
+{% block content %}
+    {% load crispy_forms_tags %}
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Rajerestruj sie</legend>
+            {{ form|crispy }}
+        </fieldset>
+
+        <form class="was-validated">
+            <div class="custom-control custom-checkbox mb-3">
+                <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
+                <label class="custom-control-label" for="customControlValidation1">Akceptujesz regulamin Firmy Damno z.o.o</label>
+                <div class="invalid-feedback">Example invalid feedback text</div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Rejestracaj</button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Czy napewno ?  <a class="ml-2" href="{% url 'register' %}">Zaloguj sie </a>
+            </small>
+        </div>
+{% endblock content %}
